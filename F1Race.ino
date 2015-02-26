@@ -1,7 +1,7 @@
 //F1 Race
 //Francois W. Nel
 //2015-02-20
-//Creative Commons BY-NC-SA 4.0
+//Creative Commons BY-NC-SA
 //
 //Requirements:
 //Standard 16x2 LCD
@@ -94,7 +94,7 @@ void loop() {
   //Check for steering state
   steering();
 
-  //Generate other drivers
+  //Generate other drivers randomly. Used 0-9 to experiment with different probabilities
   chance = random(9);
   if (chance < 5) {
     leftLane();
@@ -165,9 +165,9 @@ void leftLane() {
     lcd.write(1);
     lcd.setCursor(i + 3, 0);
     lcd.write(byte(0));
-    lcd.setCursor(0, 0);
+    lcd.setCursor(0, 0); //Dirty fix for sprites remaining on screen, intend to fix with a better loop
     lcd.write(byte(0));
-    lcd.setCursor(1, 0);
+    lcd.setCursor(1, 0); //Same as above
     lcd.write(byte(0));
     delay(gameSpeed);
 
@@ -192,9 +192,9 @@ void rightLane() {
     lcd.write(1);
     lcd.setCursor(i + 3, 1);
     lcd.write(byte(0));
-    lcd.setCursor(0, 1);
+    lcd.setCursor(0, 1); //Dirty fix for sprites remaining on screen, intend to fix with a better loop
     lcd.write(byte(0));
-    lcd.setCursor(1, 1);
+    lcd.setCursor(1, 1); //Same as above
     lcd.write(byte(0));
     delay(gameSpeed);
 
