@@ -10,8 +10,8 @@
 #include <LiquidCrystal.h>
 
 LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
-const int rightButtonPin = 6;
-const int leftButtonPin = 7;
+int rightButtonPin = 6;
+int leftButtonPin = 7;
 int rightButtonState, leftButtonState, chance, gameSpeed;
 bool steerLeft, steerRight;
 
